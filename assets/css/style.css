@@ -11,13 +11,28 @@ font-family: 'Notable', sans-serif; */
 }
 
 th {
-    border-top: 1px solid rgba(25, 110, 189, 0.774) !important;
+    /* border-top: 1px solid rgba(25, 110, 189, 0.774) !important; */
     border-bottom: 1px solid rgb(25, 110, 189, 0.774) !important;
 
 }
 
 h1, h2, h3, h4, h5{
     color:white!important;
-    font-family: 'Kodchasan', sans-serif;
+    font-family:FontTwo !important;
+    /* font-family: 'Kodchasan', sans-serif; */
 }
 
+@font-face{
+    font-family: FontTwo;
+    src: url("../fonts/ChaparralPro-Regular.otf");
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url("../fonts/AJensonPro-Regular_0.otf");
+
+}
+
+body{
+    font-family: myFirstFont !important;
+}

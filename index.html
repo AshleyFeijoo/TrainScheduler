@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <title>Document</title>
-    <meta charset="utf-8">
     <title>Train Scheduler</title>
 <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Fahkwang|Kodchasan|Notable" rel="stylesheet">
@@ -14,16 +11,18 @@
 <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery.js"></script>
 <!-- firebase -->
-    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-    <!-- moment.js-->
+<script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-database.js"></script>
+<!-- moment.js-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="assets/javascript/train.js"></script>
-    <!-- stylesheets -->
+<!-- stylesheets -->
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
-<body>
+<body class="AJenson">
     <div class= "mx-auto navbar navbar- bg-dark text-center">
         <h1>Trains</h1>
     </div>
@@ -32,12 +31,13 @@
             <div class= "col-lg-12">
                 <div class="card card-success">
                     <div class="card-header p-1">
-                    <h3 class="card-title h4">Current Train Schedule</h3>
+                    <h3 class="card-title h4 p-1 m-0">Current Train Schedule</h3>
                     </div>
                     <div class="card-body">
-                    <table class="table table-hover" id='train-table'>
-                        <thead>
+                    <table class="table table-hover text-left" id='train-table'>
+                        <thead id="train-bod">
                             <tr>
+                            <th>Select</th>
                             <th>Train Name</th>
                             <th>Destination</th>
                             <th>Frequency (min)</th>
@@ -56,10 +56,11 @@
             <div class="col-lg-12">
                 <div class="card card-success">
                     <div class="card-header p-1">
-                        <h3 class="card-title h4">Add a train</h3>
+                        <h3 class="card-title h4 p-1 m-0">Add a train</h3>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form id="trainForm">
+                                    
                             <div class="form-group">
                                 <label for="name-input">Train Name</label>
                                 <input id="name-input" class="form-control" type="text">
@@ -76,31 +77,15 @@
                                 <label for="freq-input">Frequency (min)</label>
                                 <input id="freq-input" class="form-control" type="text">
                             </div>
+                            <button class="btn btn-success" id="submit-btn" type="submit">Submit</button>
+                            <button class="btn btn-danger" id="del-btn" type="submit">delete</button>
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
 </body>
