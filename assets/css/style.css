@@ -42,11 +42,11 @@ h1, h2, h3, h4, h5{
 }
 
 body{
-    /* font-family: myFirstFont !important;
+    font-family: myFirstFont !important;
     background-color:white;
     background-image: url('../images/photo-1510075379048-97c9d99dde3e.jpeg');
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
 }
 
 .butt {
