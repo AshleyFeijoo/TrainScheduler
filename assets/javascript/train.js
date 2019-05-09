@@ -40,13 +40,11 @@ $(document).ready(function() {
 
 //submit button functions
     $('#submit-btn').on('click', function(){
-      
         event.preventDefault();
         trainName = $('#name-input').val().trim();
         trainDestin = $('#destin-input').val().trim();
         trainTime = $('#time-input').val().trim();
         trainFreq = $('#freq-input').val().trim();
-        
         $("form").trigger("reset");
 
         //pushes the information to firebase
@@ -98,14 +96,16 @@ $(document).ready(function() {
        '</thead>'
        )
 
-    
-
  
        $(".butt").click(function(){
-        Rkey = (this.id);
-        console.log(Rkey)
-        database.ref().child(Rkey).remove();
-        window.location.reload();
+        if (confirm("Are you sure?")) {
+            Rkey = (this.id);
+            console.log(Rkey)
+            database.ref().child(Rkey).remove();
+            window.location.reload();
+        }
+        return false;
+
     });
 
     });
