@@ -36,3 +36,15 @@ h1, h2, h3, h4, h5{
 body{
     font-family: myFirstFont !important;
 }
+
+.butt {
+    /* border: 1px outset darkred;
+    background-color: red; */
+    height:30px;
+    width:30px;
+    cursor:pointer;
+    text-align:center;
+    margin: 0;
+    padding: 0px 10px;
+}
+

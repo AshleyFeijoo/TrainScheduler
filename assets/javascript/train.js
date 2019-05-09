@@ -40,11 +40,13 @@ $(document).ready(function() {
 
 //submit button functions
     $('#submit-btn').on('click', function(){
+      
         event.preventDefault();
         trainName = $('#name-input').val().trim();
         trainDestin = $('#destin-input').val().trim();
         trainTime = $('#time-input').val().trim();
         trainFreq = $('#freq-input').val().trim();
+        
         $("form").trigger("reset");
 
         //pushes the information to firebase
@@ -86,7 +88,7 @@ $(document).ready(function() {
 
         $('#train-table').append('<thead>' +
         '<tr>'+
-        '<th><input type="checkbox" id="select-in" name="record"></th>'+
+        '<th><button class="btn btn-xs butt btn-danger"'+  'id="' + csKey + '"' + 'type="button">x</button></th>'+
         '<th>' + cs.trainName + '</th>' + 
        '<th>' + cs.trainDestin + '</th>'+
        '<th>' + cs.trainFreq + '</th>'+
@@ -96,20 +98,16 @@ $(document).ready(function() {
        '</thead>'
        )
 
-       $('#select-in').click(function () { 
-        if($(this).is(":checked")){
-                        console.log("yay");
-                    }
-           
-       });
-    //    $("#del-btn").click(function(){
-    //     $("#train-bod").find('input[name="record"]').each(function(){
-    //         if($(this).is(":checked")){
-    //             console.log("yay");
-    //         }
-    //     });
-    // });
-        
+    
+
+ 
+       $(".butt").click(function(){
+        Rkey = (this.id);
+        console.log(Rkey)
+        database.ref().child(Rkey).remove();
+        window.location.reload();
+    });
+
     });
 
 

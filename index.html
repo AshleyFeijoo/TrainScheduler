@@ -13,10 +13,14 @@
 <!-- firebase -->
 <script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-app.js"></script>
 <!-- Add Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/6.0.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 <!-- moment.js-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="assets/javascript/train.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
+
+
 <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -37,14 +41,15 @@
                     <table class="table table-hover text-left" id='train-table'>
                         <thead id="train-bod">
                             <tr>
-                            <th>Select</th>
-                            <th>Train Name</th>
-                            <th>Destination</th>
-                            <th>Frequency (min)</th>
-                            <th>Next Arrival</th>
-                            <th>Minutes Away</th>
+                            <th scope="col">Select</th>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
                             </tr>
                         </thead>
+             
                         <tbody>
                         </tbody>
                         </table>
@@ -59,11 +64,10 @@
                         <h3 class="card-title h4 p-1 m-0">Add a train</h3>
                     </div>
                     <div class="card-body">
-                        <form id="trainForm">
-                                    
+                        <form id="trainForm" method="get" name="train-form">    
                             <div class="form-group">
                                 <label for="name-input">Train Name</label>
-                                <input id="name-input" class="form-control" type="text">
+                                <input id="name-input" class="form-control"  required type="text">
                             </div>
                             <div class="form-group">
                                 <label for="destin-input">Destination</label>
@@ -77,9 +81,8 @@
                                 <label for="freq-input">Frequency (min)</label>
                                 <input id="freq-input" class="form-control" type="text">
                             </div>
-                            <button class="btn btn-success" id="submit-btn" type="submit">Submit</button>
-                            <button class="btn btn-danger" id="del-btn" type="submit">delete</button>
-
+                           <div class="row text-center mx-auto"> <button class=" col-12-xs btn btn-primary" id="submit-btn" type="submit">Submit</button></div>
+                          
                         </form>
                     </div>
                 </div>
