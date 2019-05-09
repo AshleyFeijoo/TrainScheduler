@@ -40,6 +40,7 @@ $(document).ready(function() {
 
 //submit button functions
     $('#submit-btn').on('click', function(){
+      
         event.preventDefault();
         trainName = $('#name-input').val().trim();
         trainDestin = $('#destin-input').val().trim();
@@ -78,9 +79,9 @@ $(document).ready(function() {
 
         var tRemainder = diffTime % tf;
         
-        var timeUntillTrain = tf - tRemainder;
+        var timeUntilTrain = tf - tRemainder;
 
-        var nextTrain = moment().add(timeUntillTrain, "minutes");
+        var nextTrain = moment().add(timeUntilTrain, "minutes");
         nextTrain = moment(nextTrain).format("hh:mm A");
 
 
@@ -91,10 +92,12 @@ $(document).ready(function() {
        '<th>' + cs.trainDestin + '</th>'+
        '<th>' + cs.trainFreq + '</th>'+
        '<th>' + nextTrain + '</th>'+
-       '<th>' + timeUntillTrain + '</th>'+
+       '<th>' + timeUntilTrain + '</th>'+
        '</tr>'+
        '</thead>'
        )
+
+    
 
  
        $(".butt").click(function(){
@@ -103,9 +106,9 @@ $(document).ready(function() {
             console.log(Rkey)
             database.ref().child(Rkey).remove();
             window.location.reload();
-        }
-        return false;
-
+      }
+      return false;
+       
     });
 
     });

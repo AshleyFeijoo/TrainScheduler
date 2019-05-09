@@ -2,6 +2,10 @@
 font-family: 'Kodchasan', sans-serif;
 font-family: 'Notable', sans-serif; */
 
+.container{
+
+}
+
 .card-header{
     background-color: rgb(25, 110, 189)!important;
 }
@@ -33,8 +37,16 @@ h1, h2, h3, h4, h5{
 
 }
 
+.AJenson{
+    font-family: "myFirstFont"!important;
+}
+
 body{
     font-family: myFirstFont !important;
+    background-color:white;
+    background-image: url('../images/photo-1510075379048-97c9d99dde3e.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .butt {
@@ -48,3 +60,6 @@ body{
     padding: 0px 10px;
 }
 
+.navbar{
+    background-color: #141B41;
+}
