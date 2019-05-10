@@ -37,21 +37,21 @@
     </div>
     <div class="container">
         <div class="row d-flex flex-column justify-content-center ">
-            <div class= "col-lg-8 col-lg-8-offset-2 align-self-center mt-5 mb-5">
+            <div class= "col-lg-9 align-self-center mt-5 mb-5">
                 <div class="card card-success">
                     <div class="card-header p-1">
-                    <h3 class="card-title h4 p-1 m-0">Current Train Schedule</h3>
+                    <h3 class="card-title h4 p-1 m-0 text-center">Current Train Schedule</h3>
                     </div>
-                    <div class="table-responsive-sm card-body">
+                    <div class="table-responsive-sm pt-0 card-body">
                     <table class="table table-hover text-center" id='train-table'>
                         <thead id="train-bod">
                             <tr>
-                            <th scope="col">Delete</th>
-                            <th scope="col">Train Name</th>
-                            <th scope="col">Destination</th>
-                            <th scope="col">Frequency (min)</th>
-                            <th scope="col">Next Arrival</th>
-                            <th scope="col">Minutes Away</th>
+                            <th scope="col" class="h5">Delete</th>
+                            <th scope="col" class="h5">Train Name</th>
+                            <th scope="col" class="h5">Destination</th>
+                            <th scope="col" class="h5">Frequency (min)</th>
+                            <th scope="col" class="h5">Next Arrival</th>
+                            <th scope="col" class="h5">Minutes Away</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,30 +60,30 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-lg-8-offset-2 align-self-center">
+            <div class="col-lg-9 align-self-center">
                 <div class="card card-success">
                     <div class="card-header p-1">
-                        <h3 class="card-title h4 p-1 m-0">Add a train</h3>
+                        <h3 class="card-title h4 p-1 m-0 text-center">Add a train</h3>
                     </div>
                     <div class="card-body">
                         <form id="trainForm" method="get" name="train-form">    
                             <div class="form-group">
-                                <label for="name-input">Train Name</label>
+                                <label class="h5" for="name-input">Train Name</label>
                                 <input id="name-input" name = "nameTrain" class="form-control" type="text">
                             </div>
                             <div class="form-group">
-                                <label for="destin-input">Destination</label>
+                                <label class="h5" for="destin-input">Destination</label>
                                 <input id="destin-input" name = "destinTrain" class="form-control" type="text">
                             </div>
                             <div class="form-group">
-                                <label for="time-input">First Train Time HH:MM (Military Time)</label>
+                                <label class="h5" for="time-input">First Train Time HH:MM (Military Time)</label>
                                 <input id="time-input" class="form-control" name = "timeTrain"  type="text">
                             </div>
                             <div class="form-group">
-                                <label for="freq-input">Frequency (min)</label>
+                                <label class="h5" for="freq-input">Frequency (min)</label>
                                 <input id="freq-input" class="form-control" type="text" name = "freqTrain">
                             </div>
-                           <div class="row text-center mx-auto"> <button class="d-inline-flex justify-content-center flew-row add" id="submit-btn" type="submit">Add Train</button></div>
+                       <div class="row justify-content-center mx-auto"> <button class="d-inline-flex justify-content-center flew-row add" type="submit">Add Train</button></div>
 
 
 

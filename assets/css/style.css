@@ -7,7 +7,10 @@ font-family: 'Notable', sans-serif; */
 }
 
 .card-header{
-    background-color: #141b41eb!important;
+    background-image: url('../images/trianglify.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #141b41eb;
 }
 
 .card{
@@ -16,11 +19,13 @@ font-family: 'Notable', sans-serif; */
 }
 
 th {
-    border-top: 1px solid #141b41eb!important;
-    
+  border-top:none!important;
+    border-bottom: 1px solid #141b41eb!important;
+
 
 }
 thead:first-child{
+    border-top:none;
     border-bottom: 1px solid #141b41eb!important;
 }
 
@@ -46,8 +51,9 @@ h1, h2, h3, h4, h5{
 }
 
 body{
-    font-family: myFirstFont !important;
+    font-family: 'Work Sans', sans-serif!important;
     background-color:white;
+   
     background-image: url('../images/pexels-photo.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -63,8 +69,13 @@ body{
     margin: 0;
     padding: 0px 10px; */
 }
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+
 
 .navbar{
+    background-image: url('../images/trianglify.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: #141b41eb;
     border-bottom: solid 1px grey;
     border-bottom-left-radius: 10px;

@@ -1,13 +1,17 @@
 .add{
-    background:#151d63;
+    background-image: url('../images/trianglify.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #141b41eb;
     color:#fff;
     border:none;
     position:relative;
     height:3em;
+    width:10em;
     font-size:1em;
     border-radius:10px;
     padding:.5em;
-    width:6em;
+ 
     cursor:pointer;
     transition:800ms ease all;
     outline:none;

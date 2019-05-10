@@ -10,7 +10,6 @@ var csKey = "";
 var cs;
 var nextTrain = '';
 
-console.log(nextTrain)
 $(document).ready(function() {
 //firebase Initial
     var firebaseConfig = {
@@ -45,7 +44,6 @@ $(document).ready(function() {
 
         //pushes the information to firebase
         database.ref().push(trainTwo)
-        console.log(trainTwo)
         $("form").trigger("reset");
 
     }); 
@@ -59,7 +57,6 @@ $(document).ready(function() {
         var trainFreq = childSnapshot.val().frequency;
     
         csKey = childSnapshot.key;
-        console.log(childSnapshot.key)
         trainFreq;
 	  // Current Time
         // var currentTime = moment();
@@ -94,7 +91,6 @@ $(document).ready(function() {
 
        $(".butt").click(function(){
             Rkey = (this.id);
-            console.log(Rkey)
             database.ref().child(Rkey).remove();
             window.location.reload();
 
