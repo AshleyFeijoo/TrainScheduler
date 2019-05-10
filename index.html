@@ -10,6 +10,9 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery.js"></script>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
 <!-- firebase -->
 <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
@@ -25,6 +28,7 @@
 <!-- stylesheets -->
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/somethin.css">
 
 </head>
 <body class="AJenson">
@@ -32,14 +36,14 @@
         <h1>Trains</h1>
     </div>
     <div class="container">
-        <div class="row d-flex flex-column justify-content-center mt-5 mb-5">
-            <div class= "col-lg-8 col-lg-8-offset-2 align-self-center">
+        <div class="row d-flex flex-column justify-content-center ">
+            <div class= "col-lg-8 col-lg-8-offset-2 align-self-center mt-5 mb-5">
                 <div class="card card-success">
                     <div class="card-header p-1">
                     <h3 class="card-title h4 p-1 m-0">Current Train Schedule</h3>
                     </div>
                     <div class="table-responsive-sm card-body">
-                    <table class="table table-hover text-left" id='train-table'>
+                    <table class="table table-hover text-center" id='train-table'>
                         <thead id="train-bod">
                             <tr>
                             <th scope="col">Delete</th>
@@ -50,7 +54,6 @@
                             <th scope="col">Minutes Away</th>
                             </tr>
                         </thead>
-             
                         <tbody>
                         </tbody>
                         </table>
@@ -80,8 +83,10 @@
                                 <label for="freq-input">Frequency (min)</label>
                                 <input id="freq-input" class="form-control" type="text" name = "freqTrain">
                             </div>
-                           <div class="row text-center mx-auto"> <button class=" col-12-xs btn btn-primary" id="submit-btn" type="submit">Submit</button></div>
-                          
+                           <div class="row text-center mx-auto"> <button class="d-inline-flex justify-content-center flew-row add" id="submit-btn" type="submit">Add Train</button></div>
+
+
+
                         </form>
                     </div>
                 </div>

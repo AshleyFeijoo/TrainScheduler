@@ -1,0 +1,38 @@
+.add{
+    background:#151d63;
+    color:#fff;
+    border:none;
+    position:relative;
+    height:3em;
+    font-size:1em;
+    border-radius:10px;
+    padding:.5em;
+    width:6em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+  .add:hover{
+    background:#fff;
+    color:#151d63;
+  }
+  .add:before,.add:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #151d63;
+    transition:400ms ease all;
+  }
+  .add:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .add:hover:before,.add:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }

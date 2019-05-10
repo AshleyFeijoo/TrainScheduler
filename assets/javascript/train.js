@@ -1,27 +1,16 @@
 
 // var currentTime = moment();
 //     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
-var trainName = "";
-var trainDestin = "";
-var trainTime;
-var trainFreq = "";
+// var trainName = "";
+// var trainDestin = "";
+// var trainTime;
+// var trainFreq = "";
 var currentTime = moment();
 var csKey = "";
 var cs;
-console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+var nextTrain = '';
 
-function getTimeFromMins(mins) {
-    // do not include the first validation check if you want, for example,
-    // getTimeFromMins(1530) to equal getTimeFromMins(90) (i.e. mins rollover)
-    if (mins >= 24 * 60 || mins < 0) {
-        throw new RangeError("Valid input should be greater than or equal to 0 and less than 1440.");
-    }
-    var h = mins / 60 | 0,
-        m = mins % 60 | 0;
-    return moment.utc().hours(h).minutes(m).format("HH:mm");
-}
-
-
+console.log(nextTrain)
 $(document).ready(function() {
 //firebase Initial
     var firebaseConfig = {
@@ -46,68 +35,69 @@ $(document).ready(function() {
         trainDestin = $('#destin-input').val().trim();
         trainTime = $('#time-input').val().trim();
         trainFreq = $('#freq-input').val().trim();
-        $("form").trigger("reset");
+    
+        var trainTwo = {
+            name: trainName,
+            destination: trainDestin,
+            start: trainTime,
+            frequency: trainFreq
+        };
 
         //pushes the information to firebase
-        database.ref().push({
-            trainName: trainName,
-            trainDestin: trainDestin,
-            trainFreq: trainFreq,
-            trainTime: trainTime
-          });
-          return trainTime;
+        database.ref().push(trainTwo)
+        console.log(trainTwo)
+        $("form").trigger("reset");
+
     }); 
 
 
 
     database.ref().on("child_added", function(childSnapshot) {
-        cs = childSnapshot.val();
-        	   // Declare variable
-        console.log(cs)
+        var trainName = childSnapshot.val().name;
+        var trainDestin = childSnapshot.val().destination;
+        var trainTime = childSnapshot.val().start;
+        var trainFreq = childSnapshot.val().frequency;
+    
         csKey = childSnapshot.key;
         console.log(childSnapshot.key)
-       var tf = cs.trainFreq;
+        trainFreq;
 	  // Current Time
         // var currentTime = moment();
-        var firstTime = cs.trainTime;
+        var trainTime = 0
 
-        var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+        var firstTimeConverted = moment(trainTime, "HH:mm").subtract(1, "years");
  
-        var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+        var firstTimeConverted = moment(trainTime, "HH:mm").subtract(1, "years");
         var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
 
 
-        var tRemainder = diffTime % tf;
+        var tRemainder = diffTime % trainFreq;
         
-        var timeUntilTrain = tf - tRemainder;
+        var timeUntilTrain = trainFreq - tRemainder;
 
-        var nextTrain = moment().add(timeUntilTrain, "minutes");
+        nextTrain = moment().add(timeUntilTrain, "minutes");
         nextTrain = moment(nextTrain).format("hh:mm A");
 
-
+        if (nextTrain !== moment()){
         $('#train-table').append('<thead>' +
         '<tr>'+
-        '<th><button class="btn btn-xs butt btn-danger"'+  'id="' + csKey + '"' + 'type="button">x</button></th>'+
-        '<th>' + cs.trainName + '</th>' + 
-       '<th>' + cs.trainDestin + '</th>'+
-       '<th>' + cs.trainFreq + '</th>'+
+        '<th><img class="butt" id="' + csKey + '"' +  'style="width:25px; height:25px"  src="./assets/images/x-button.svg"></th>'+
+        '<th>' + trainName + '</th>' + 
+       '<th>' + trainDestin + '</th>'+
+       '<th>' + trainFreq + '</th>'+
        '<th>' + nextTrain + '</th>'+
        '<th>' + timeUntilTrain + '</th>'+
        '</tr>'+
        '</thead>'
        )
+        }
 
-    
-
- 
        $(".butt").click(function(){
-        if (confirm("Are you sure?")) {
             Rkey = (this.id);
             console.log(Rkey)
             database.ref().child(Rkey).remove();
             window.location.reload();
-      }
-      return false;
+
        
     });
 
