@@ -31,7 +31,8 @@ thead:first-child{
 
 h1, h2, h3, h4, h5{
     color:white!important;
-    font-family:FontTwo !important;
+    font-family: 'Karla', sans-serif!important;
+
     /* font-family: 'Kodchasan', sans-serif; */
 }
 
@@ -69,7 +70,8 @@ body{
     margin: 0;
     padding: 0px 10px; */
 }
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
 
 
 .navbar{
@@ -83,3 +85,14 @@ body{
 
 }
 
+.train-pic{
+    width: 548px;
+    height:28px;
+    
+
+}
+
+h1{
+    margin: auto 0 auto 0;
+    padding: 1em 1em 1em 0
+}
